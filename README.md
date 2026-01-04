@@ -143,21 +143,6 @@ Website dapat diakses melalui:
 http://72.8.xxx.xxx
 atau
 https://luminousstone.com
-```
-
----
-
-## 👨‍💻 Catatan Developer
-
-* Routing frontend ditangani **sepenuhnya oleh React**
-* Laravel berfungsi sebagai **container & backend**
-* Tidak menggunakan Inertia
-* Build frontend dilakukan via `npm run build`
-
----
-
-© Luminous Stone
-
 ---
 
 ## 🖥️ CMD SERVER 
