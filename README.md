@@ -25,11 +25,6 @@ cd luminous
 npm install --legacy-peer-deps
 ```
 
-> ⚠️ **WAJIB** menggunakan `--legacy-peer-deps`
-> karena template React (Lovable) menggunakan **Vite 5**.
-
----
-
 ### 3️⃣ Install PHP Dependency
 
 ```bash
