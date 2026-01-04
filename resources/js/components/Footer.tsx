@@ -1,0 +1,168 @@
+import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { 
+  Instagram, 
+  Phone,
+  MapPin,
+  FileText,
+  Sparkles
+} from "lucide-react";
+
+const Footer = () => {
+  const { t, language } = useLanguage();
+
+  const maintenanceTips = language === "id" 
+    ? [
+        "Bersihkan dengan kain lembut dan sabun ringan",
+        "Hindari bahan kimia keras atau abrasif",
+        "Lap segera jika terkena tumpahan cairan",
+      ]
+    : [
+        "Clean with soft cloth and mild soap",
+        "Avoid harsh chemicals or abrasives", 
+        "Wipe immediately if liquid spills",
+      ];
+
+  return (
+    <footer className="bg-[#1a1a1a] text-foreground pb-20 lg:pb-0">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          {/* Kolom 1: Media Sosial */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-primary">{t.footer.socialMedia}</h3>
+            <ul className="space-y-3">
+              <li>
+                <a 
+                  href="https://www.instagram.com/frantinco.id/" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="flex items-center gap-2 hover:translate-x-1 transition-transform text-muted-foreground hover:text-foreground"
+                >
+                  <Instagram size={18} />
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.tiktok.com/@frantinco.indonesia" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="flex items-center gap-2 hover:translate-x-1 transition-transform text-muted-foreground hover:text-foreground"
+                >
+                  <svg viewBox="0 0 24 24" className="w-[18px] h-[18px] fill-current">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                  </svg>
+                  TikTok
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.youtube.com/@frantinco.indonesia" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="flex items-center gap-2 hover:translate-x-1 transition-transform text-muted-foreground hover:text-foreground"
+                >
+                  <svg viewBox="0 0 24 24" className="w-[18px] h-[18px] fill-current">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                  YouTube
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.facebook.com/frantinco.hpl.1/?_rdc=1&_rdr#" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="flex items-center gap-2 hover:translate-x-1 transition-transform text-muted-foreground hover:text-foreground"
+                >
+                  <svg viewBox="0 0 24 24" className="w-[18px] h-[18px] fill-current">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                  Facebook
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Kolom 2: Info Produk */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-primary">{t.footer.productInfo}</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link 
+                  to="/artikel" 
+                  className="flex items-center gap-2 hover:translate-x-1 transition-transform text-muted-foreground hover:text-foreground"
+                >
+                  <FileText size={18} />
+                  {t.nav.articles}
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/produk" 
+                  className="flex items-center gap-2 hover:translate-x-1 transition-transform text-muted-foreground hover:text-foreground"
+                >
+                  <Sparkles size={18} />
+                  {t.nav.products}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Kolom 3: Tips Perawatan */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-primary">
+              {language === "id" ? "Tips Perawatan" : "Maintenance Tips"}
+            </h3>
+            <ul className="space-y-2">
+              {maintenanceTips.map((tip, index) => (
+                <li key={index} className="text-sm text-muted-foreground flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  {tip}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Kolom 4: Lokasi & Kontak */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-primary">{t.footer.location}</h3>
+            <div className="space-y-4">
+              <div className="flex gap-3">
+                <MapPin size={18} className="text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <p className="font-medium text-foreground">PT. Frantinco Indah Makmur</p>
+                  <p className="text-sm text-muted-foreground">
+                    Kawasan Bizpoint Blok Orlando No. 7, Cikupa, Tangerang, Banten.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 text-muted-foreground">
+                <Phone size={18} className="text-primary" />
+                <span>(021)-222-00988 / 989</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Baris Bawah */}
+        <div className="border-t border-border mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <Link 
+            to="/kontak" 
+            className="text-primary hover:underline font-medium"
+          >
+            {t.footer.contactUs}
+          </Link>
+          <p className="text-sm text-muted-foreground">
+            Copyright © {new Date().getFullYear()}{" "}
+            <span className="text-foreground">PT. Frantinco Indah Makmur</span>. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
